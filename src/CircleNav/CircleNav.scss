@@ -1,0 +1,40 @@
+.circle-nav {
+	width: 50vh;
+	height: 50vh;
+	border-radius: 50%;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	border: 1px solid rgba(64, 64, 64, 0.1);
+	transform-origin: center center;
+	transform: translate(-50%, -50%) rotate(0deg);
+	z-index: 1;
+	user-select: none;
+	pointer-events: auto;
+}
+
+.circle-point {
+	position: absolute;
+	border-radius: 50%;
+	background-color: #42567A;
+	color: #42567A;
+	font-weight: bold;
+	font-size: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	box-shadow: none;
+	user-select: none;
+	transform: translate(-50%, -50%);
+	transition: all 0.1s ease;
+
+}
+
+// .circle-point.active {
+// 	background-color: #f4f5f9;
+// 	color: #fff;
+// 	font-size: 20px;
+// }
+
+

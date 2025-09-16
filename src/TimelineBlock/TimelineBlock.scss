@@ -1,0 +1,37 @@
+.timeline-block {
+	height: 100vh;
+	width: 100vw;
+	max-width: 1440px;
+	background-color: #f4f5f9;
+	background-image: linear-gradient(
+			to right,
+			rgba(64, 64, 64, 0.1) 1px,
+			transparent 1px
+		),
+		linear-gradient(to bottom, rgba(64, 64, 64, 0.1) 1px, transparent 1px);
+	background-size: 50% 50%;
+	background-position: 0 0;
+	border: rgba(64, 64, 64, 0.1) solid 1px;
+	h1 {
+		font-size: 56px;
+		color: #42567a;
+		font-weight: bold;
+		position: relative;
+		padding-left: 78px;
+		margin: 16vh 0 0 0;
+		line-height: 1.2;
+		
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			width: 3px;
+			margin: 7px 0px;
+			background: linear-gradient(to bottom, #3877EE, #EF5DA8);
+		}
+	}
+}
+
