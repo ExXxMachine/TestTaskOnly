@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+$color-primary: #3877ee;
+$color-primary-light: #e6e6e6;
+$color-disabled: #ccc;
+$color-text: #42567a;
+$border-shadow: rgba(0, 0, 0, 0.3);
+$box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+$font-family-primary: 'Bebas Neue', cursive;
+$font-size-h2-min: 20px;
+$font-size-h2-max: 25px;
+$font-size-p-min: 20px;
+$font-size-p-max: 20px;
+$transition-fast: 0.3s ease;
+
+.container {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 90%;
+  margin: auto;
+  padding: 0 60px;
+  margin-bottom: 20px;
+}
+
+.button {
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: #FFFFFF;
+  color: $color-primary;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color $transition-fast;
+  transform: translateY(-50%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0;
+  box-shadow: $box-shadow;
+
+  &:before {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-style: solid;
+    border-width: 2px 2px 0 0;
+    border-color: $color-primary;
+    margin: auto;
+  }
+
+  &:hover:not(:disabled) {
+    background-color: $color-primary-light;
+  }
+
+  &:disabled {
+    background-color: $color-disabled;
+    cursor: default;
+    visibility: hidden;
+  }
+}
+
+.buttonLeft::before {
+  transform: rotate(-135deg);
+}
+
+.buttonRight::before {
+  transform: rotate(45deg);
+}
+
+.buttonLeft {
+  left: 0;
+  transform: translate(-100%, -50%);
+}
+
+.buttonRight {
+  right: 0;
+  transform: translate(100%, -50%);
+}
+
+.swiper-slide {
+  h2 {
+    font-family: $font-family-primary;
+    font-weight: 400;
+    color: $color-primary;
+    margin: 0 0 15px 0;
+    font-size: calc((100vw - 320px) / (1440 - 320) * (#{$font-size-h2-max} - #{$font-size-h2-min}) + #{$font-size-h2-min});
+  }
+  p {
+    font-size: $font-size-p-min;
+    color: $color-text;
+  }
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity $transition-fast;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity $transition-fast;
+}
+
+@media (max-width: 760px) {
+  .button {
+    display: none;
+  }
+  .container {
+    position: static;
+    margin-bottom: 25vh;
+    padding: 0 20px;
+    width: 100%;
+  }
+  .swiper-slide {
+    margin-left: 20px;
+  }
+}

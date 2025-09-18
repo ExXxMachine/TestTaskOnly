@@ -1,40 +1,78 @@
+$size-circle: 50vh;
+$border-color-light: rgba(64, 64, 64, 0.1);
+$color-primary: #42567a;
+$font-size-base: 20px;
+$font-weight-bold: bold;
+$transition-default: 0.4s ease;
+$zindex-text: 1000;
+
 .circle-nav {
-	width: 50vh;
-	height: 50vh;
-	border-radius: 50%;
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	border: 1px solid rgba(64, 64, 64, 0.1);
-	transform-origin: center center;
-	transform: translate(-50%, -50%) rotate(0deg);
-	z-index: 1;
-	user-select: none;
-	pointer-events: auto;
+  width: $size-circle;
+  height: $size-circle;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 1px solid $border-color-light;
+  transform-origin: center center;
+  transform: translate(-50%, -50%) rotate(0deg);
+  z-index: 1;
+  user-select: none;
+  pointer-events: auto;
+
+  &-text {
+    position: absolute;
+    top: 28%;
+    left: 58%;
+    font-size: $font-size-base;
+    transform: translate(10px, -50%);
+    font-weight: $font-weight-bold;
+    color: $color-primary;
+    padding: 6px 12px;
+    border-radius: 8px;
+    user-select: none;
+    pointer-events: none;
+    white-space: nowrap;
+    z-index: $zindex-text;
+    transition: opacity $transition-default;
+    opacity: 1;
+
+    &.hidden {
+      opacity: 0;
+      transition: opacity 0.0000001s ease;
+    }
+
+    @media (min-height: 750px) {
+      margin-left: 20px;
+    }
+
+    @media (min-height: 1000px) {
+      margin-left: 40px;
+    }
+
+    @media (max-width: 760px) {
+      display: none;
+    }
+  }
+
+  @media (max-width: 760px) {
+    display: none;
+  }
 }
 
 .circle-point {
-	position: absolute;
-	border-radius: 50%;
-	background-color: #42567A;
-	color: #42567A;
-	font-weight: bold;
-	font-size: 20px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	cursor: pointer;
-	box-shadow: none;
-	user-select: none;
-	transform: translate(-50%, -50%);
-	transition: all 0.1s ease;
-
+  position: absolute;
+  border-radius: 50%;
+  background-color: $color-primary;
+  color: $color-primary;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-base;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: none;
+  user-select: none;
+  transform: translate(-50%, -50%);
+  transition: all 0.1s ease;
 }
-
-// .circle-point.active {
-// 	background-color: #f4f5f9;
-// 	color: #fff;
-// 	font-size: 20px;
-// }
-
-
